@@ -3,8 +3,6 @@ Soundchain is a music streaming platform that uses blockchain technology to prov
 
 **Link to project:** http://franciscorafart.com/links/soundchain/about.html
 
-![alt tag](http://placecorgi.com/1200/650)
-
 ## How It's Made:
 
 **Tech used:**  JavaScript, Firebase, FirebaseUI, CoinHive, HTML, CSS
