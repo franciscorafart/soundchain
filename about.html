@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+			<meta name content="">
+
+			<!-- Firebase things   -->
+			<!-- TODO: Load it from js folder -->
+			<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
+			<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+			<!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script> -->
+			<!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-storage.js"> -->
+
+	    <script>
+	      // Initialize Firebase
+				let config = {
+	        apiKey: "Your_API_Key",
+	        authDomain: "Your_app_url",
+	        databaseURL: "Your_database_url",
+	        projectId: "Your_project_id",
+	        storageBucket: "Your_storage_bucket",
+	        messagingSenderId: "Your_messaging_ID"
+	      };
+	      firebase.initializeApp(config);
+	    </script>
+
+		<title>Soundchain</title>
+
+		<!-- external CS  link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- font awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	</head>
+	<body>
+
+		<header>
+			<nav class="leftNav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="artist.html">Artists</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</nav>
+			<nav class="rightNav">
+				<ul>
+					<!-- <li><a href="#">Contact</a></li> -->
+					<li><a href="#" id="sign-in"></a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="cover clearfix">
+			<div class="title">
+				<h2>Soundchain</h2>
+				<h1>Blockchain powered fair trade music platform</h1>
+				<h2>About</h2>
+				<span id="sign-in-status"></span><span id="userName"></span>
+				<h3 id="wallet"></h3>
+				<span id="score"></span>
+				<!-- <p>When you listen music in cryto player, we borrow your CPU power to mine cryptocurrency. All the revenue generated is sent directly to the artist.</p> -->
+			</div>
+
+			<div class=" clearfix">
+				<div class="bio">
+					<div class="upCont">
+						<h3>What is Soundchain?</h3>
+						<p>Soundchain is a music streaming platform that uses blockchain technology to provide a fair trade music listening experience. In order to pay the creators of music, instead of showing you ads, we borrow your device's CPU to mine cryptocurrency. The cryptocurrency you generate is then sent to the artist that you listened to. It's that simple. In this way, you have a uninterruped music experience and the artists get paid directly. Now, if you don't want to lend your cpu that's all right. Soundchain works on a prepaid fashion as well. Load any amount of money into your account and pay the artists as you go, no subscriptions, no chains</p>
+					</div>
+					<div class="imgCont">
+						<img src="http://pic1.win4000.com/wallpaper/a/5492752a20966.jpg" alt="artist image">
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<!-- Monero -->
+		<script src="https://authedmine.com/lib/authedmine.min.js"></script>
+		<!-- jquery and main js -->
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="js/authControl.js" type="text/javascript"></script>
+
+	</body>
+</html>

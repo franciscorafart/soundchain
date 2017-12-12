@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-storage.js"></script>
+    <script>
+      // Initialize Firebase
+      let config = {
+        apiKey: "Your_API_Key",
+        authDomain: "Your_app_url",
+        databaseURL: "Your_database_url",
+        projectId: "Your_project_id",
+        storageBucket: "Your_storage_bucket",
+        messagingSenderId: "Your_messaging_ID"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- external CS  link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <header>
+			<nav class="leftNav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="artist.html">Artists</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</nav>
+			<nav class="rightNav">
+				<ul>
+					<!-- <li><a href="#">Contact</a></li> -->
+					<li><a href="#" id="sign-in"></a></li>
+				</ul>
+			</nav>
+		</header>
+    <section class="cover artistCover clearfix">
+      <div class="addSongDiv clearfix">
+          <h2>Add songs to your catalogue</h2>
+  				<input id="songName"type="text" name="" value="" placeholder="Song Name">
+  				<input id="ID" type="text" name="" value="" placeholder="Song Id">
+  				<input id="author" type="text" name="" value="" placeholder="Artist Name">
+  				<!-- <input id="url" type="text" name="" value="" placeholder="url"> -->
+          <input type="file" id="myFile" name="" value="">
+          <progress value="0" max="100" id="uploader">0%</progress>
+          <span id="progress"></span>
+  				<button id="push" type="button" name="button">Add Song</button>
+  		</div>
+
+      <div class="addMoney clearfix">
+        <h2>Add money to your account</h2>
+        <span id="yourMoney"></span>
+        <input type="number" id="addCash" value="0">
+        <button id="pushCash" type="button" name="button">Add money</button>
+      </div>
+
+      <div class="songlist clearfix">
+        <h2>Your uploaded songs</h2>
+        <ul id="userSongs">
+          <!-- inserted from javascript -->
+        </ul>
+
+      </div>
+      <div class="profile clearfix">
+        <h2>Your profile</h2>
+        <div class="">
+          <img src="images/user.png" id="profileImage" alt="User photo">
+        </div>
+        <div class="">
+          <span id="userName">User Name: </span>
+          <span id="userEmail"></span>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="js/artistapp.js" type="text/javascript"></script>
+  </body>
+</html>

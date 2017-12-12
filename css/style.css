@@ -1,0 +1,432 @@
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.alignright {
+	float: right;
+	padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+	float: left;
+	padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     color: #000;
+     font-size: 12px;
+     line-height: 1.4;
+     font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Center the container */
+#container {
+	width: 960px;
+	margin: auto;
+}
+ul,li,nav,h1,h2,a,p{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 35px;
+  background-color: #c43235;
+}
+header li{
+  margin: 7px 0 0 3%;
+  float: left;
+}
+header li a{
+  color: #e6e6e8;
+  font-size: 1.4em;
+}
+.rightNav li{
+  margin-left: none;
+  margin: 7px 3% 0 0;
+  height: 30px;
+  float: right;
+}
+.loginSec{
+  background-image: url("images/crowd.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 40px;
+  min-height: 700px;
+}
+.loginSec h1, .loginSec h2{
+  text-align: center;
+  color: #300032;
+}
+.loginSec .topDiv h1{
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.loginSec h2{
+  font-size: 2em;
+}
+.topDiv{
+  padding: 60px 0 40px 0;
+}
+.cover{
+    padding: 0 0 80px 0;
+}
+.title{
+  padding: 80px 0 80px 0;
+}
+.title h1,h2,p,span, .title h3{
+  text-align: center;
+  color: #300032;
+  padding: 0 0 20px 0;
+}
+.title span:last-of-type{
+  margin-bottom: 20px;
+}
+.title h1{
+  font-size: 3em;
+}
+.title h2{
+  font-size: 2.2em;
+}
+.title p{
+  font-size: 1.6em;
+  width: 40%;
+  margin-left: 30%;
+}
+.title span{
+  font-size: 1.2em;
+  display: block;
+  padding: 0;
+}
+tr{
+  font-size: 1.5em;
+  /*color: #300032;*/
+  color: #e6e6e8;
+}
+tr span{
+
+  /*color: #300032;*/
+  color: #e6e6e8;
+}
+
+.cover{
+  background-image: url("http://static.tumblr.com/7b37633d29d9aaca9828b5132273cdf1/sy59fz4/1linmyvvt/tumblr_static_4y2skv97m24ogs84wc40sccso.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px 0 40px 0;
+  min-height: 700px;
+}
+
+.artistInfo{
+  width: 40%;
+  margin: 0 0 40px 30%;
+  padding: 20px 2% 20px 2%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.artistInfo span{
+  display: block;
+  margin-bottom: 10px;
+  width: 50%;
+  margin-left: 25%;
+  color: #300032;
+  font-size: 1.4em;
+}
+
+#artistSearch{
+  width: 100%;
+  height:25px;
+  font-size: 1.4em;
+  margin: 0 0 30px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  display: block;
+  clear: both;
+  color: #300032;
+}
+#artistSearchButton{
+  display: block;
+  clear: both;
+  width: 50%;
+  margin-left: 25%;
+  height: 40px;
+  background-color: #c43235;
+  color: #e6e6e8;
+  font-size: 1.3em;
+}
+
+.playerContainer{
+  width: 90%;
+  margin-left: 5%;
+  padding: 20px 1% 20px 1%;
+  border: 1px solid #e6e6e8;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.playerContainer h2{
+  color: #e6e6e8;
+  font-size: 1.8em;
+}
+#player{
+  width: 100%;
+}
+#player tr{
+  height: 36px;
+  border-bottom: 1px solid #e6e6e8;
+}
+#player th{
+  text-align: left;
+}
+.playImg{
+  width: 20px;
+}
+#player img{
+  width: 30px;
+  position: relative;
+  left: 4%;
+  top: 5px;
+}
+#player span{
+  position: relative;
+  left: 25%;
+  bottom: 5px;
+}
+#audioPlayer{
+  width: 60%;
+  margin: 20px 0 20px 20%;
+}
+
+.aboutArtist{
+  background-color: #e6e6e8;
+  padding: 60px 0 60px 0;
+}
+.aboutArtist h2{
+  color: #c43235;
+  font-size: 1.8em;
+  text-shadow: none;
+  margin-bottom: 40px;
+}
+.bio{
+  /*background-color: #300032;*/
+  background-color: #c43235;
+  width: 70%;
+  margin: 0 0 60px 15%;
+  padding: 10px 2% 10px 2%;
+}
+.upCont{
+  width: 80%;
+  margin-left: 10%;
+}
+.bio p,.bio h3{
+  color: #e6e6e8;
+  font-size: 1.4em;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.imgCont{
+  width: 80%;
+  margin: 0 0 40px 10%;
+  border: 1px solid #e6e6e8;
+}
+.imgCont img{
+  width: 100%;
+  padding: 20px 5% 20px 5%;
+}
+.bio h3{
+  text-align: center;
+}
+
+.sizeChange{
+  font-size: 1.1em;
+}
+/*Artist html*/
+.artistCover{
+  padding: 40px 0 40px 0;
+}
+.addSongDiv, .addMoney, .profile, .songlist{
+  display: block;
+  width: 40%;
+  min-height: 200px;
+  padding: 30px 2% 30px 2%;
+  margin: 0 5% 40px 5%;
+  background-color: rgba(255, 255, 255, 0.6);
+  float: left;
+}
+.songlist{
+  clear: both;
+}
+.artistCover span{
+  color: black;
+  font-size: 1.1em;
+}
+.addSongDiv input{
+  float: left;
+  width: 48%;
+  margin: 5px 1% 0 0;
+}
+.addSongDiv input:nth-of-type(4){
+  width: 100%;
+}
+progress{
+  margin: 10px 0 10px 0;
+  width: 70%;
+}
+#myFile, #progress, #push, #uploader{
+  float: left;
+}
+#push{
+  width: 20%;
+  height: 30px;
+  margin-left: 40%;
+  background-color: #c43235;
+}
+#userSongs li{
+  height: 30px;
+  border-bottom:1px solid black;
+}
+#userSongs span{
+  display: block;
+  float: left;
+  height:30px;
+  margin: 0;
+  width:45%;
+}
+#userSongs li img{
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+.addMoney input{
+  width: 50%;
+  margin: 0 0 40px 25%;
+}
+#pushCash{
+  width: 33.3333%;
+  height: 30px;
+  margin-left: 33.3333%;
+  background-color: #c43235;
+  float: left;
+  clear: both;
+}
+.addMoney span{
+  display: block;
+  width: 100%;
+  text-align: center;
+
+}
+
+.profile div{
+  display: block;
+  float: left;
+}
+.profile div:first-of-type{
+  width: 30%;
+}
+.profile div:first-of-type img{
+  padding: 2px;
+  border-radius: 50%;
+  width: 100%;
+}
+.profile div:last-of-type{
+  width: 70%;
+}
+.profile div span{
+  float: left;
+  clear: both;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+footer{
+  border: 1px solid black;
+  clear: both;
+}
+
+#ham{
+  float: right;
+  display: none;
+}
+
+
+/*Responsiveness*/
+@media only screen and (max-width:760px){
+  .mid{
+    background: purple;
+  }
+
+  #player tr th:nth-of-type(2),#player tr td:nth-of-type(2){
+    display: none;
+  }
+  .artistInfo{
+    width: 80%;
+    margin: 0 0 20px 10%;
+    padding: 10px 2% 10px 2%;
+  }
+  .cover{
+      padding: 0 0 30px 0;
+  }
+  .title{
+    padding: 20px 0 20px 0;
+  }
+   header li{
+     display: block;
+     width: 33.333%;
+     margin: 7px 0 0 0;
+   }
+   .rightNav li{
+     margin: 7px 0 0 0;
+     float: left;
+   }
+   header li a{
+     display: block;
+     width: 100%;
+     text-align: center;
+   }
+
+  /*artist html*/
+  .addSongDiv, .addMoney, .profile, .songlist{
+    display: block;
+    width: 80%;
+    padding: 30px 2% 30px 2%;
+    margin: 0 10% 40px 10%;
+    float: none;
+  }
+  #userSongs li img{
+      width: 4%;
+  }
+}

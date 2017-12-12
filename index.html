@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Authentication</title>
+    <!-- Firebase things   -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <!-- external CS  link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+
+    <script>
+      // Initialize Firebase
+      let config = {
+        apiKey: "Your_API_Key",
+        authDomain: "Your_app_url",
+        databaseURL: "Your_database_url",
+        projectId: "Your_project_id",
+        storageBucket: "Your_storage_bucket",
+        messagingSenderId: "Your_messaging_ID"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- Firebase UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+    <script type="text/javascript">
+
+    // if user signs in redirect to player.html site
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+    // User is signed in.
+      window.location.replace("player.html")
+    } else {
+    // No user is signed in.
+    // FirebaseUI config.
+    var uiConfig = {
+      signInSuccessUrl: 'player.html',
+      signInOptions: [
+        // Leave the lines as is for the providers you want to offer your users.
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID//,
+        // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+      ],
+      // Terms of service url.
+      tosUrl: '<your-tos-url>'
+    };
+
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+    }
+    });
+    </script>
+  </head>
+  <body>
+
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+  <header>
+    <nav class="leftNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="artist.html">Artists</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <nav class="rightNav">
+      <ul>
+        <!-- <li><a href="#">Contact</a></li> -->
+        <li><a href="#" id="sign-in"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="loginSec clearfix">
+    <div class="topDiv">
+      <h1>Soundchain</h1>
+      <h2>Blockchain powered fair trade music platform</h2>
+    </div>
+
+    <div id="firebaseui-auth-container"></div>
+  </section>
+
+  </body>
+</html>
